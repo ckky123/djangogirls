@@ -1,0 +1,20 @@
+{% extends 'cts0/base.html'%}
+
+{% block title%}{% endblock%}
+
+{%block content %}
+<h1>Cheaper Travel Solution</h1>
+<form action="" method"GET">
+From <input type='text' name='from' value='type the train station'>
+To <input type='text' name='to' value='type the train station'>
+<p>Search the cheapest ticket in a period for one way</p>
+<p>Search From：<input type="text" name="fromTime" id="fromTime"></p>
+<p>Search To：<input type="text" name="ToTime" id="ToTime"></p>
+
+<p>Search the cheapest ticket for return</p>
+<p>Departure Date：<input type="text" name="DepTime" id="DepTime"></p>
+<p>Back Date：<input type="text" name="BackTime" id="BackTime"></p>
+
+<input type="submit" value ="search">
+</form>
+{%endblock%}
