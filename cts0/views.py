@@ -133,8 +133,8 @@ def QueryOneDay (Origin, Destination, Month, Day, rs, results):
                 if Response.status_code == 200:
                     print ("Start Write :", Origin, "To", Destination, Month, "/", Day)
                     sql = "INSERT INTO `Train` (`PrimaryKey`, `Origin`, `Destination`, `DepartDate`, `ArriveDate`, `DepartTime`, `ArriveTime`, `Standard`, `First`, `RecordTime`) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP);"
-                    #db = pymysql.connect(host="myeusql.dur.ac.uk", user="kqpm28", passwd="rudd52er", db="Ikqpm28_CTS", charset='utf8')
-                    db = pymysql.connect(host="localhost", user="root", passwd="z1z1z1z1", db="Ikqpm28_CTS", charset='utf8')
+                    db = pymysql.connect(host="myeusql.dur.ac.uk", user="kqpm28", passwd="rudd52er", db="Ikqpm28_CTS", charset='utf8')
+                    #db = pymysql.connect(host="localhost", user="root", passwd="z1z1z1z1", db="Ikqpm28_CTS", charset='utf8')
                     cursor = db.cursor()
                 
                     query_json = Response.json(object_pairs_hook=OrderedDict)
