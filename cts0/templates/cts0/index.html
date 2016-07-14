@@ -3,19 +3,27 @@
 {% block title%}{% endblock%}
 
 {%block content %}
+
+<form method='post'>
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="提交">
+</form>
+
+
 <h1>Cheaper Travel Solution</h1>
 <form action="QueryOneWeek" method"GET">
-From <input type='text' name='from' value='type the train station'>
-To <input type='text' name='to' value='type the train station'>
+From <input type='text' name='from' id="from" value='type the train station'>
+To <input type='text' name='to' id="to" value='type the train station'>
 <p>Search the cheapest ticket in a period for one way</p>
-<p>Search From：<input type="text" name="fromTime" id="fromTime"></p>
-<p>Search To：<input type="text" name="ToTime" id="ToTime"></p>
+<p>Search From：<input type="text"  name="fromTime" id="fromTime"></p>
+<p>Search To：<input type="text"  name="toTime" id="toTime"></p>
 
 <p>Search the cheapest ticket for return</p>
 <p>Departure Date：<input type="text" name="DepTime" id="DepTime"></p>
 <p>Back Date：<input type="text" name="BackTime" id="BackTime"></p>
-
-<input type="submit" value ="search">
+<button type="submit" id="search" value ="search">
+<p>result: <span id='result'></span></p>
 </form>
 {%endblock%}
 
